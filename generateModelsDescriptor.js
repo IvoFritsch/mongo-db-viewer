@@ -6,6 +6,8 @@ const fs = require('fs')
 
 const BatchSchema = require('./src/models/Batch').schema
 const CidSchema = require('./src/models/Cid').schema
+const FinanceSchema = require('./src/models/Finance').schema
+const AttendanceSchema = require('./src/models/Attendance').schema
 const ClinicUserSchema = require('./src/models/User/Clinic').schema
 
 const AuthIdSchema = new mongoose.Schema(
@@ -70,7 +72,8 @@ const AuthIdSchema = new mongoose.Schema(
 
 //console.log(mountSchemaPaths(BatchSchema))
 //mountSchemaPaths(BatchSchema)
-mountSchemaPaths(AuthIdSchema)
+// mountSchemaPaths(AuthIdSchema)
+mountSchemaPaths(BatchSchema)
 //console.log(Object.keys(AuthIdSchema.paths))
 // mountSchemaPaths(BatchSchema)
 
@@ -80,7 +83,11 @@ function mountSchemaPaths(schema) {
   paths = Object.entries(paths)
   for(let i = 0; i < paths.length; i++) {
     const [name, type] = paths[i]
-    ret[name] = diveIntoFieldType(type)
+    
+    const parsedType = diveIntoFieldType(type)
+    if(parsedType) {
+      ret[name] = diveIntoFieldType(type)
+    }
   }
   ret = {
     __DBVIEWER__type: ret
@@ -131,6 +138,12 @@ function diveIntoFieldType(fieldType) {
   if(fieldType.options.ref) {
     ret.__DBVIEWER__ref = fieldType.options.ref
   }
+  if(fieldType.options.enum) {
+    ret.__DBVIEWER__enum = fieldType.options.enum
+  }
+  if(fieldType.options.documentation) {
+    ret.__DBVIEWER__docs = fieldType.options.documentation
+  }
   if(['ObjectID', 'ObjectId', 'String', 'Number', 'Boolean', 'Date'].includes(instanceName)) {
     ret.__DBVIEWER__type = instanceName
     ret.__DBVIEWER__isFinal = true
@@ -148,13 +161,17 @@ function diveIntoFieldType(fieldType) {
 }
 
 function diveIntoArrayOrMixedField(type){
-  let ref = undefined;
-  [type, ref] = normalizeTypeDeclaration(type)
+  if(!type) return undefined
+  let ref = undefined
+  let enumeration = undefined
+  let documentation = undefined;
+  [type, ref, enumeration, documentation] = normalizeTypeDeclaration(type)
 
   if(type.constructor.name == 'Function' && type.name == 'Mixed') {
     return {
       __DBVIEWER__type: '?????',
-      __DBVIEWER__isFinal: true
+      __DBVIEWER__isFinal: true,
+      __DBVIEWER__docs: documentation
     }
   }
 
@@ -162,14 +179,12 @@ function diveIntoArrayOrMixedField(type){
     const ret = {}
 
     Object.entries(type).forEach(([k, v]) => {
-      if(k == 'nums') {
-        k
-      }
       ret[k] = diveIntoArrayOrMixedField(v)
     })
 
     return {
-      __DBVIEWER__type: ret
+      __DBVIEWER__type: ret,
+      __DBVIEWER__docs: documentation
     }
   }
 
@@ -182,27 +197,29 @@ function diveIntoArrayOrMixedField(type){
     })
 
     return {
-      __DBVIEWER__type: ret
+      __DBVIEWER__type: ret,
+      __DBVIEWER__docs: documentation
     }
   }
-  console.log(type.instance)
+
   if(type.instance) {
     return {
       ...diveIntoFieldType(type)
     }
   }
-  //console.log(type.constructor.name)
   return {
     __DBVIEWER__type: type.name,
     __DBVIEWER__isFinal: true,
-    __DBVIEWER__ref: ref
+    __DBVIEWER__ref: ref,
+    __DBVIEWER__enum: enumeration,
+    __DBVIEWER__docs: documentation
   }
 
 }
 
 function normalizeTypeDeclaration(type) {
   if(type.constructor.name == 'Object' && type.type) {
-    return [type.type, type.ref]
+    return [type.type, type.ref, type.enum, type.documentation]
   }
   return [type]
 }
