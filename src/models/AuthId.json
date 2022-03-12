@@ -1,0 +1,83 @@
+{
+  "__DBVIEWER__type": {
+    "user": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "expiration": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "valid": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "veriFirstJourney": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "test": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "testObj": {
+      "__DBVIEWER__type": {
+        "ivo": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "nums": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "kaka": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        },
+        "pedro": {
+          "__DBVIEWER__type": {
+            "idade": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "clinic": {
+          "__DBVIEWER__ref": "Clinic",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "testArray": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": "ObjectId",
+          "__DBVIEWER__isFinal": true,
+          "__DBVIEWER__ref": "User"
+        }
+      ]
+    },
+    "testMixed": {
+      "__DBVIEWER__type": "?????",
+      "__DBVIEWER__isFinal": true
+    },
+    "_id": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "updatedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    }
+  }
+}

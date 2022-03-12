@@ -1,0 +1,197 @@
+{
+  "__DBVIEWER__type": {
+    "_id": {
+      "__DBVIEWER__docs": "ID do lote, representado por uma string de 12 digitos, menor que o padrão do mongo",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "protocol": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "clinic": {
+      "__DBVIEWER__ref": "Clinic",
+      "__DBVIEWER__docs": "ID da clínica que gerou esse lote",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "pendingSendJob": {
+      "__DBVIEWER__docs": "Indica se tem um job de envio pendente para esse lote",
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "type": {
+      "__DBVIEWER__docs": "Representa o tipo da guias dentro desse lote, como o sistema faz a divisão das guias no lote por tipo, um lote sempre tem todas as guias do mesmo tipo",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "batchNumber": {
+      "__DBVIEWER__docs": "Número do lote, gerado pelo goclin para envio à operadora",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "status": {
+      "__DBVIEWER__enum": [
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "__DBVIEWER__docs": "Status do lote",
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "lastStatusCheck": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "authorizationCount": {
+      "__DBVIEWER__docs": "Quantidade de guias no lote",
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "isRefused": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "total": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "refusalAppeal": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": {
+            "protocol": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "appealNumber": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "isPending": {
+              "__DBVIEWER__type": "Boolean",
+              "__DBVIEWER__isFinal": true
+            },
+            "lastStatus": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "lastStatusProtocol": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "lastStatusDateTime": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "createdAt": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "sentData": {
+              "__DBVIEWER__type": "?????",
+              "__DBVIEWER__isFinal": true
+            },
+            "insuranceJustificative": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "insuranceAcceptJustificative": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "totalAcceptedValue": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        }
+      ]
+    },
+    "approvedTotal": {
+      "__DBVIEWER__docs": "Total autorizado pelo operadora",
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "refusalValue": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "refusalReason": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": {
+            "code": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "description": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "codigoGlosa": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "descricaoGlosa": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        }
+      ]
+    },
+    "insurance": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdBy": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "generateReceivable": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "receivable": {
+      "__DBVIEWER__ref": "Finance",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "lastSentRefusal": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "professional": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "updatedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "tenantId": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "__v": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "__DBVIEWER__type": {
+    "type": {
+      "__DBVIEWER__enum": [
+        "-pay",
+        "-withdraw",
+        "-transfer-out",
+        "+transfer-in",
+        "+receive",
+        "+supply"
+      ],
+      "__DBVIEWER__docs": "Indica de qual o tipo desse registro do financeiro",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdBeforeCashDateValidation": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "payReceiveFields": {
+      "__DBVIEWER__type": {
+        "description": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "category": {
+          "__DBVIEWER__ref": "Category",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        },
+        "invoice": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "dueDate": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "cashDate": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "discount": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "increase": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "paymentMethod": {
+          "__DBVIEWER__enum": [
+            "money",
+            "credit_card",
+            "debit_card",
+            "check",
+            "boleto",
+            "bank_transfer",
+            "pix"
+          ],
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "expectedValue": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "origin": {
+          "__DBVIEWER__type": {
+            "ids": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              ]
+            },
+            "type": {
+              "__DBVIEWER__enum": [
+                "particular_attendance",
+                "batch",
+                "medical_transfer",
+                "attendance"
+              ],
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "items": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "refType": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true,
+                  "__DBVIEWER__enum": [
+                    "att",
+                    "bt"
+                  ]
+                },
+                "refId": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "quantity": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                },
+                "name": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "description": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "transferFields": {
+      "__DBVIEWER__type": {
+        "destinationAccount": {
+          "__DBVIEWER__ref": "Account",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "clinic": {
+      "__DBVIEWER__ref": "Clinic",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "register": {
+      "__DBVIEWER__ref": "Register",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "value": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "referenceDate": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "observation": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "justificative": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdBy": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "effectivated": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "active": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "_id": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "updatedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "tenantId": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "__v": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    }
+  }
+}

@@ -1,0 +1,1200 @@
+{
+  "__DBVIEWER__type": {
+    "authorization": {
+      "__DBVIEWER__type": {
+        "type": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "_id": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "code": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "PIN": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "status": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "expiration": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "manuallyCreated": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "authorizationStep": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "solicitationId": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "copart": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "clinicalIndication": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "hospitalization": {
+          "__DBVIEWER__type": {
+            "hospitalInfo": {
+              "__DBVIEWER__type": {
+                "identificationOnInsurance": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "name": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "cnpj": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "cnes": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "suggestedHospitalizationDate": {
+                  "__DBVIEWER__type": "Date",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            },
+            "hospitalizationType": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "hospitalizationRegime": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "daysQtt": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "opmeIndication": {
+              "__DBVIEWER__type": "Boolean",
+              "__DBVIEWER__isFinal": true
+            },
+            "chemotherapyIndication": {
+              "__DBVIEWER__type": "Boolean",
+              "__DBVIEWER__isFinal": true
+            },
+            "startDate": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "endDate": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "executionDate": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "originAuthorization": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "cids": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "cid": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true,
+                      "__DBVIEWER__ref": "Cid"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "honoraryAttendance": {
+          "__DBVIEWER__ref": "Attendance",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        },
+        "hospitalizationAttendance": {
+          "__DBVIEWER__ref": "Attendance",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        },
+        "note": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "isRefused": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "total": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalAppeal": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "protocol": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "appealNumber": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "isPending": {
+                  "__DBVIEWER__type": "Boolean",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatus": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatusProtocol": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatusDateTime": {
+                  "__DBVIEWER__type": "Date",
+                  "__DBVIEWER__isFinal": true
+                },
+                "createdAt": {
+                  "__DBVIEWER__type": "Date",
+                  "__DBVIEWER__isFinal": true
+                },
+                "sentData": {
+                  "__DBVIEWER__type": "?????",
+                  "__DBVIEWER__isFinal": true
+                },
+                "insuranceJustificative": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "insuranceAcceptJustificative": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "totalAcceptedValue": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        },
+        "approvedTotal": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalValue": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalReason": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "_id": {
+                  "__DBVIEWER__isFinal": true
+                },
+                "code": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "description": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "codigoGlosa": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "descricaoGlosa": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        },
+        "updatedAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "createdAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "inContingency": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "billing": {
+      "__DBVIEWER__type": {
+        "status": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "copart": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "transferPercent": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "batch": {
+          "__DBVIEWER__ref": "Batch",
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "isRefused": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "total": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalAppeal": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "protocol": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "appealNumber": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "isPending": {
+                  "__DBVIEWER__type": "Boolean",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatus": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatusProtocol": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "lastStatusDateTime": {
+                  "__DBVIEWER__type": "Date",
+                  "__DBVIEWER__isFinal": true
+                },
+                "createdAt": {
+                  "__DBVIEWER__type": "Date",
+                  "__DBVIEWER__isFinal": true
+                },
+                "sentData": {
+                  "__DBVIEWER__type": "?????",
+                  "__DBVIEWER__isFinal": true
+                },
+                "insuranceJustificative": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "insuranceAcceptJustificative": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "totalAcceptedValue": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        },
+        "approvedTotal": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalValue": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "refusalReason": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": {
+                "_id": {
+                  "__DBVIEWER__isFinal": true
+                },
+                "code": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "description": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "codigoGlosa": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                },
+                "descricaoGlosa": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          ]
+        },
+        "updatedAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "createdAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "transfer": {
+      "__DBVIEWER__type": {
+        "finance": {
+          "__DBVIEWER__ref": "Finance",
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        },
+        "value": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "percent": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "dateTime": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "description": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "updatedAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "createdAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "requester": {
+      "__DBVIEWER__type": {
+        "professional": {
+          "__DBVIEWER__type": {
+            "name": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "council": {
+              "__DBVIEWER__ref": "Council",
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "councilNumber": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "councilState": {
+              "__DBVIEWER__ref": "State",
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "specialty": {
+              "__DBVIEWER__ref": "Specialty",
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "clinic": {
+          "__DBVIEWER__type": {
+            "name": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "type": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "identification": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "dateTime": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "_id": {
+          "__DBVIEWER__type": "ObjectID",
+          "__DBVIEWER__isFinal": true
+        },
+        "updatedAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        },
+        "createdAt": {
+          "__DBVIEWER__type": "Date",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "priceToUse": {
+      "__DBVIEWER__type": {
+        "total": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "transferPercent": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        },
+        "copart": {
+          "__DBVIEWER__type": "Number",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "expenses": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": {
+            "_id": {
+              "__DBVIEWER__isFinal": true
+            },
+            "event": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__ref": "Event"
+            },
+            "quantityRequested": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "unityValue": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "unit": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "adjustMultiplier": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "transferPercent": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "isRefused": {
+              "__DBVIEWER__type": "Boolean",
+              "__DBVIEWER__isFinal": true
+            },
+            "total": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalAppeal": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "protocol": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "appealNumber": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "isPending": {
+                      "__DBVIEWER__type": "Boolean",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatus": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatusProtocol": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatusDateTime": {
+                      "__DBVIEWER__type": "Date",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "createdAt": {
+                      "__DBVIEWER__type": "Date",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "sentData": {
+                      "__DBVIEWER__type": "?????",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "insuranceJustificative": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "insuranceAcceptJustificative": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "totalAcceptedValue": {
+                      "__DBVIEWER__type": "Number",
+                      "__DBVIEWER__isFinal": true
+                    }
+                  }
+                }
+              ]
+            },
+            "approvedTotal": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalValue": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalReason": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "_id": {
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "code": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "description": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "codigoGlosa": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "descricaoGlosa": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "type": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "status": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "isFitting": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "patient": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "blockReason": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "patientModel": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "patientData": {
+      "__DBVIEWER__type": {
+        "name": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "cns": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "identificationOnInsurance": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "planOnInsurance": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "holder": {
+          "__DBVIEWER__type": {
+            "name": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "cpf": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "isTempPatient": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "insuranceAuthorization": {
+      "__DBVIEWER__type": {
+        "token": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "justificative": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "tissAttendanceType": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "tissConsultType": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "cellPhone": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "homePhone": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "clinic": {
+      "__DBVIEWER__ref": "Clinic",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "insurance": {
+      "__DBVIEWER__ref": "Insurance",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "professional": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "specialty": {
+      "__DBVIEWER__ref": "Specialty",
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "event": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "events": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": {
+            "_id": {
+              "__DBVIEWER__isFinal": true
+            },
+            "event": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__ref": "Event"
+            },
+            "selectedName": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "quantityRequested": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "quantityAuthorized": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "collectMaterial": {
+              "__DBVIEWER__type": "ObjectId",
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__ref": "MaterialOrExam"
+            },
+            "examType": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": "ObjectId",
+                  "__DBVIEWER__isFinal": true,
+                  "__DBVIEWER__ref": "MaterialOrExam"
+                }
+              ]
+            },
+            "unityValue": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "transferPercent": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "adjustMultiplier": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "tissFields": {
+              "__DBVIEWER__type": "?????",
+              "__DBVIEWER__isFinal": true
+            },
+            "isRefused": {
+              "__DBVIEWER__type": "Boolean",
+              "__DBVIEWER__isFinal": true
+            },
+            "total": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalAppeal": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "protocol": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "appealNumber": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "isPending": {
+                      "__DBVIEWER__type": "Boolean",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatus": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatusProtocol": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "lastStatusDateTime": {
+                      "__DBVIEWER__type": "Date",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "createdAt": {
+                      "__DBVIEWER__type": "Date",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "sentData": {
+                      "__DBVIEWER__type": "?????",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "insuranceJustificative": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "insuranceAcceptJustificative": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "totalAcceptedValue": {
+                      "__DBVIEWER__type": "Number",
+                      "__DBVIEWER__isFinal": true
+                    }
+                  }
+                }
+              ]
+            },
+            "approvedTotal": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalValue": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            },
+            "refusalReason": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "_id": {
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "code": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "description": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "codigoGlosa": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    },
+                    "descricaoGlosa": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "dateTime": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "note": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "sendNoteInXml": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "isReturn": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "justification": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "needJustificationOrReturn": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "pendingToMarkReturn": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "prenatal": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "isNewBorn": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "invoices": {
+      "__DBVIEWER__type": {
+        "myInvoice": {
+          "__DBVIEWER__type": {
+            "id": {
+              "__DBVIEWER__type": "ObjectId",
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__ref": "Invoice"
+            },
+            "percent": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "voucherInvoice": {
+          "__DBVIEWER__type": {
+            "id": {
+              "__DBVIEWER__type": "ObjectId",
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__ref": "Invoice"
+            },
+            "percent": {
+              "__DBVIEWER__type": "Number",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        }
+      }
+    },
+    "eligible": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "eligibleError": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "waitingAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "timeAttendedBeforePause": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    },
+    "attendedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "finishedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "noAttendance": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "isWaiting": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "medicalRecord": {
+      "__DBVIEWER__ref": "MedicalRecord",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "medicalReportFile": {
+      "__DBVIEWER__type": {
+        "accessUrl": {
+          "__DBVIEWER__type": "ObjectId",
+          "__DBVIEWER__isFinal": true
+        },
+        "accessKey": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "path": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "expired": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        }
+      }
+    },
+    "medicalAttendSignature": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "medicalAttend": {
+      "__DBVIEWER__type": "?????",
+      "__DBVIEWER__isFinal": true
+    },
+    "isFromImport": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "executed": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "authorizedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "originAttendance": {
+      "__DBVIEWER__ref": "Attendance",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "recurrenceId": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "isExecutant": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "character": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "groupId": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "telemedicine": {
+      "__DBVIEWER__type": {
+        "accessKey": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "opentokSessionId": {
+          "__DBVIEWER__type": "String",
+          "__DBVIEWER__isFinal": true
+        },
+        "enabledRecording": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "records": {
+          "__DBVIEWER__type": [
+            {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            }
+          ]
+        },
+        "callEnded": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "sentAboutToBeginAlert": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "patientReceivedConnection": {
+          "__DBVIEWER__type": "Boolean",
+          "__DBVIEWER__isFinal": true
+        },
+        "callToPatient": {
+          "__DBVIEWER__type": {
+            "uuid": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "status": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "startedAt": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            }
+          }
+        },
+        "evaluation": {
+          "__DBVIEWER__type": {
+            "professional": {
+              "__DBVIEWER__type": {
+                "grade": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                },
+                "observation": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            },
+            "patient": {
+              "__DBVIEWER__type": {
+                "grade": {
+                  "__DBVIEWER__type": "Number",
+                  "__DBVIEWER__isFinal": true
+                },
+                "observation": {
+                  "__DBVIEWER__type": "String",
+                  "__DBVIEWER__isFinal": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "createdBy": {
+      "__DBVIEWER__ref": "User",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "serialTreatment": {
+      "__DBVIEWER__ref": "SerialTreatment",
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "insuranceInteractions": {
+      "__DBVIEWER__type": [
+        {
+          "__DBVIEWER__type": {
+            "origin": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "message": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "event": {
+              "__DBVIEWER__type": "String",
+              "__DBVIEWER__isFinal": true
+            },
+            "createdAt": {
+              "__DBVIEWER__type": "Date",
+              "__DBVIEWER__isFinal": true
+            },
+            "files": {
+              "__DBVIEWER__type": [
+                {
+                  "__DBVIEWER__type": {
+                    "name": {
+                      "__DBVIEWER__type": "String",
+                      "__DBVIEWER__isFinal": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "isConfirmed": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "sentAppointmentNotification": {
+      "__DBVIEWER__type": "Boolean",
+      "__DBVIEWER__isFinal": true
+    },
+    "_id": {
+      "__DBVIEWER__type": "ObjectID",
+      "__DBVIEWER__isFinal": true
+    },
+    "updatedAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "createdAt": {
+      "__DBVIEWER__type": "Date",
+      "__DBVIEWER__isFinal": true
+    },
+    "tenantId": {
+      "__DBVIEWER__type": "String",
+      "__DBVIEWER__isFinal": true
+    },
+    "__v": {
+      "__DBVIEWER__type": "Number",
+      "__DBVIEWER__isFinal": true
+    }
+  }
+}
