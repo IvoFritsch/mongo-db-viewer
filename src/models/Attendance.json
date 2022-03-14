@@ -3,6 +3,14 @@
     "authorization": {
       "__DBVIEWER__type": {
         "type": {
+          "__DBVIEWER__required": true,
+          "__DBVIEWER__enum": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "__DBVIEWER__default": "1",
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         },
@@ -19,6 +27,7 @@
           "__DBVIEWER__isFinal": true
         },
         "status": {
+          "__DBVIEWER__default": "active",
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         },
@@ -27,10 +36,17 @@
           "__DBVIEWER__isFinal": true
         },
         "manuallyCreated": {
+          "__DBVIEWER__default": false,
           "__DBVIEWER__type": "Boolean",
           "__DBVIEWER__isFinal": true
         },
         "authorizationStep": {
+          "__DBVIEWER__enum": [
+            "1",
+            "2"
+          ],
+          "__DBVIEWER__docs": "Indica qual foi a ultima etapa de autorização chamada para essa guia (Autorização prévia ou Execução)",
+          "__DBVIEWER__default": "2",
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         },
@@ -64,7 +80,8 @@
                 },
                 "cnes": {
                   "__DBVIEWER__type": "String",
-                  "__DBVIEWER__isFinal": true
+                  "__DBVIEWER__isFinal": true,
+                  "__DBVIEWER__default": "999999"
                 },
                 "suggestedHospitalizationDate": {
                   "__DBVIEWER__type": "Date",
@@ -74,11 +91,23 @@
             },
             "hospitalizationType": {
               "__DBVIEWER__type": "String",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
             },
             "hospitalizationRegime": {
               "__DBVIEWER__type": "String",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__enum": [
+                "1",
+                "2",
+                "3"
+              ]
             },
             "daysQtt": {
               "__DBVIEWER__type": "Number",
@@ -86,11 +115,13 @@
             },
             "opmeIndication": {
               "__DBVIEWER__type": "Boolean",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": false
             },
             "chemotherapyIndication": {
               "__DBVIEWER__type": "Boolean",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": false
             },
             "startDate": {
               "__DBVIEWER__type": "Date",
@@ -119,7 +150,8 @@
                     }
                   }
                 }
-              ]
+              ],
+              "__DBVIEWER__default": []
             }
           }
         },
@@ -138,10 +170,12 @@
           "__DBVIEWER__isFinal": true
         },
         "isRefused": {
+          "__DBVIEWER__default": false,
           "__DBVIEWER__type": "Boolean",
           "__DBVIEWER__isFinal": true
         },
         "total": {
+          "__DBVIEWER__default": 0,
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
@@ -195,9 +229,11 @@
                 }
               }
             }
-          ]
+          ],
+          "__DBVIEWER__docs": "Um array que representa os recursos de glosa, cada item representa um recurso de glosa diferente enviado para o item"
         },
         "approvedTotal": {
+          "__DBVIEWER__docs": "Total autorizado pelo operadora",
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
@@ -209,9 +245,6 @@
           "__DBVIEWER__type": [
             {
               "__DBVIEWER__type": {
-                "_id": {
-                  "__DBVIEWER__isFinal": true
-                },
                 "code": {
                   "__DBVIEWER__type": "String",
                   "__DBVIEWER__isFinal": true
@@ -249,6 +282,15 @@
     "billing": {
       "__DBVIEWER__type": {
         "status": {
+          "__DBVIEWER__required": true,
+          "__DBVIEWER__enum": [
+            "notSent",
+            "waiting",
+            "refused",
+            "approved",
+            "canceled"
+          ],
+          "__DBVIEWER__default": "notSent",
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         },
@@ -266,10 +308,12 @@
           "__DBVIEWER__isFinal": true
         },
         "isRefused": {
+          "__DBVIEWER__default": false,
           "__DBVIEWER__type": "Boolean",
           "__DBVIEWER__isFinal": true
         },
         "total": {
+          "__DBVIEWER__default": 0,
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
@@ -323,9 +367,11 @@
                 }
               }
             }
-          ]
+          ],
+          "__DBVIEWER__docs": "Um array que representa os recursos de glosa, cada item representa um recurso de glosa diferente enviado para o item"
         },
         "approvedTotal": {
+          "__DBVIEWER__docs": "Total autorizado pelo operadora",
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
@@ -337,9 +383,6 @@
           "__DBVIEWER__type": [
             {
               "__DBVIEWER__type": {
-                "_id": {
-                  "__DBVIEWER__isFinal": true
-                },
                 "code": {
                   "__DBVIEWER__type": "String",
                   "__DBVIEWER__isFinal": true
@@ -378,18 +421,22 @@
           "__DBVIEWER__isFinal": true
         },
         "value": {
+          "__DBVIEWER__required": true,
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
         "percent": {
+          "__DBVIEWER__required": true,
           "__DBVIEWER__type": "Number",
           "__DBVIEWER__isFinal": true
         },
         "dateTime": {
+          "__DBVIEWER__required": true,
           "__DBVIEWER__type": "Date",
           "__DBVIEWER__isFinal": true
         },
         "description": {
+          "__DBVIEWER__required": true,
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         },
@@ -408,47 +455,62 @@
         "professional": {
           "__DBVIEWER__type": {
             "name": {
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             },
             "council": {
               "__DBVIEWER__ref": "Council",
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             },
             "councilNumber": {
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "Number",
               "__DBVIEWER__isFinal": true
             },
             "councilState": {
               "__DBVIEWER__ref": "State",
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             },
             "specialty": {
               "__DBVIEWER__ref": "Specialty",
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             }
-          }
+          },
+          "__DBVIEWER__required": true
         },
         "clinic": {
           "__DBVIEWER__type": {
             "name": {
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             },
             "type": {
+              "__DBVIEWER__required": true,
+              "__DBVIEWER__enum": [
+                "person",
+                "company"
+              ],
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             },
             "identification": {
+              "__DBVIEWER__required": true,
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true
             }
-          }
+          },
+          "__DBVIEWER__required": true
         },
         "dateTime": {
+          "__DBVIEWER__required": true,
           "__DBVIEWER__type": "Date",
           "__DBVIEWER__isFinal": true
         },
@@ -486,9 +548,6 @@
       "__DBVIEWER__type": [
         {
           "__DBVIEWER__type": {
-            "_id": {
-              "__DBVIEWER__isFinal": true
-            },
             "event": {
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true,
@@ -504,11 +563,13 @@
             },
             "unit": {
               "__DBVIEWER__type": "String",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__required": true
             },
             "adjustMultiplier": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__required": false
             },
             "transferPercent": {
               "__DBVIEWER__type": "Number",
@@ -516,11 +577,13 @@
             },
             "isRefused": {
               "__DBVIEWER__type": "Boolean",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": false
             },
             "total": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": 0
             },
             "refusalAppeal": {
               "__DBVIEWER__type": [
@@ -572,11 +635,13 @@
                     }
                   }
                 }
-              ]
+              ],
+              "__DBVIEWER__docs": "Um array que representa os recursos de glosa, cada item representa um recurso de glosa diferente enviado para o item"
             },
             "approvedTotal": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__docs": "Total autorizado pelo operadora"
             },
             "refusalValue": {
               "__DBVIEWER__type": "Number",
@@ -586,9 +651,6 @@
               "__DBVIEWER__type": [
                 {
                   "__DBVIEWER__type": {
-                    "_id": {
-                      "__DBVIEWER__isFinal": true
-                    },
                     "code": {
                       "__DBVIEWER__type": "String",
                       "__DBVIEWER__isFinal": true
@@ -614,10 +676,26 @@
       ]
     },
     "type": {
+      "__DBVIEWER__required": true,
+      "__DBVIEWER__enum": [
+        "appointment",
+        "procedure",
+        "block",
+        "hospitalization",
+        "honorary"
+      ],
+      "__DBVIEWER__default": "appointment",
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
     "status": {
+      "__DBVIEWER__enum": [
+        0,
+        1,
+        4,
+        2,
+        3
+      ],
       "__DBVIEWER__type": "Number",
       "__DBVIEWER__isFinal": true
     },
@@ -634,6 +712,10 @@
       "__DBVIEWER__isFinal": true
     },
     "patientModel": {
+      "__DBVIEWER__enum": [
+        "TempPatient",
+        "Patient"
+      ],
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
@@ -680,16 +762,54 @@
           "__DBVIEWER__isFinal": true
         },
         "justificative": {
+          "__DBVIEWER__enum": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07"
+          ],
           "__DBVIEWER__type": "String",
           "__DBVIEWER__isFinal": true
         }
       }
     },
     "tissAttendanceType": {
+      "__DBVIEWER__enum": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
     "tissConsultType": {
+      "__DBVIEWER__enum": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
@@ -703,6 +823,7 @@
     },
     "clinic": {
       "__DBVIEWER__ref": "Clinic",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "ObjectID",
       "__DBVIEWER__isFinal": true
     },
@@ -713,11 +834,13 @@
     },
     "professional": {
       "__DBVIEWER__ref": "User",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "ObjectID",
       "__DBVIEWER__isFinal": true
     },
     "specialty": {
       "__DBVIEWER__ref": "Specialty",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
@@ -729,9 +852,6 @@
       "__DBVIEWER__type": [
         {
           "__DBVIEWER__type": {
-            "_id": {
-              "__DBVIEWER__isFinal": true
-            },
             "event": {
               "__DBVIEWER__type": "String",
               "__DBVIEWER__isFinal": true,
@@ -773,7 +893,8 @@
             },
             "adjustMultiplier": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__required": false
             },
             "tissFields": {
               "__DBVIEWER__type": "?????",
@@ -781,11 +902,13 @@
             },
             "isRefused": {
               "__DBVIEWER__type": "Boolean",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": false
             },
             "total": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__default": 0
             },
             "refusalAppeal": {
               "__DBVIEWER__type": [
@@ -837,11 +960,13 @@
                     }
                   }
                 }
-              ]
+              ],
+              "__DBVIEWER__docs": "Um array que representa os recursos de glosa, cada item representa um recurso de glosa diferente enviado para o item"
             },
             "approvedTotal": {
               "__DBVIEWER__type": "Number",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__docs": "Total autorizado pelo operadora"
             },
             "refusalValue": {
               "__DBVIEWER__type": "Number",
@@ -851,9 +976,6 @@
               "__DBVIEWER__type": [
                 {
                   "__DBVIEWER__type": {
-                    "_id": {
-                      "__DBVIEWER__isFinal": true
-                    },
                     "code": {
                       "__DBVIEWER__type": "String",
                       "__DBVIEWER__isFinal": true
@@ -891,6 +1013,7 @@
       "__DBVIEWER__isFinal": true
     },
     "isReturn": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -907,10 +1030,14 @@
       "__DBVIEWER__isFinal": true
     },
     "prenatal": {
+      "__DBVIEWER__required": true,
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
     "isNewBorn": {
+      "__DBVIEWER__required": true,
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -945,6 +1072,8 @@
       }
     },
     "eligible": {
+      "__DBVIEWER__required": true,
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -969,10 +1098,13 @@
       "__DBVIEWER__isFinal": true
     },
     "noAttendance": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
     "isWaiting": {
+      "__DBVIEWER__required": true,
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -1010,10 +1142,12 @@
       "__DBVIEWER__isFinal": true
     },
     "isFromImport": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
     "executed": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -1031,10 +1165,17 @@
       "__DBVIEWER__isFinal": true
     },
     "isExecutant": {
+      "__DBVIEWER__default": true,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
     "character": {
+      "__DBVIEWER__enum": [
+        "elective",
+        "prompt"
+      ],
+      "__DBVIEWER__docs": "Caráter do atendimento, eletivo ou urgência",
+      "__DBVIEWER__default": "elective",
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
@@ -1124,6 +1265,7 @@
     },
     "createdBy": {
       "__DBVIEWER__ref": "User",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "ObjectID",
       "__DBVIEWER__isFinal": true
     },
@@ -1138,7 +1280,11 @@
           "__DBVIEWER__type": {
             "origin": {
               "__DBVIEWER__type": "String",
-              "__DBVIEWER__isFinal": true
+              "__DBVIEWER__isFinal": true,
+              "__DBVIEWER__enum": [
+                "insurance",
+                "clinic"
+              ]
             },
             "message": {
               "__DBVIEWER__type": "String",
@@ -1189,6 +1335,7 @@
       "__DBVIEWER__isFinal": true
     },
     "tenantId": {
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },

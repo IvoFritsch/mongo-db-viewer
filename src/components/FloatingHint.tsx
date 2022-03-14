@@ -54,8 +54,7 @@ function FloatingHint() {
   }, [])
 
   useEffect(() => {
-    const subId = PubSub.subscribe('HIDE-FLOATING-HINT', (_, hintContent) => {
-      console.log('SHOW-FLOATING-HINT')
+    const subId = PubSub.subscribe('HIDE-FLOATING-HINT', () => {
       setHintContent(undefined)
       setIsAppearing(false)
     })

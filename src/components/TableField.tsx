@@ -10,10 +10,10 @@ const FieldContainer = styled.div<{clickable?: boolean, isShown?: boolean}>`
   cursor: ${props => props.clickable ? 'pointer' : 'unset'};
 `
 
-const FieldName = styled.div`
+const FieldName = styled.div<{ required?: boolean }>`
   padding-right: 2px;
-  font-weight: bold;
-  color: #a81e1e;
+  font-weight: ${props => props.required ? 700 : 600};
+  color: ${props => props.required ? '#a81e1e' : '#3e3e3e'};
 `
 
 const FieldType = styled.div`
@@ -26,7 +26,11 @@ const BlueSpan = styled.span`
   color: #1616ad;
 `
 
+
+
 export interface IFieldDescriptor {
+  __DBVIEWER__required?: boolean
+  __DBVIEWER__default?: any
   __DBVIEWER__ref?: string
   __DBVIEWER__type?: string | any
   __DBVIEWER__isFinal?: boolean
@@ -47,7 +51,7 @@ export default React.memo(function TableField({ tableName, fieldName, fieldDescr
   
   //console.log('render field', tableName, fieldName)
 
-  const [isOpen, setIsOpen] = useState(depth === 1 && !fieldDescriptor.__DBVIEWER__isFinal ? false : true)
+  const [isOpen, setIsOpen] = useState(!fieldDescriptor.__DBVIEWER__isFinal ? false : true)
   const [focusedTable, setFocusedTable] = useState<string>()
   const updateXarrows = useXarrow()
 
@@ -56,11 +60,11 @@ export default React.memo(function TableField({ tableName, fieldName, fieldDescr
     qualifiedName = (fatherQualifiedName || tableName) + '.' + fieldName
   }
 
-  const onMouseOver = useCallback(() => {
-    PubSub.publish('SHOW-FLOATING-HINT', generateFieldDocumentationContent(fieldName, qualifiedName, fieldDescriptor))
-  }, [fieldName, qualifiedName, fieldDescriptor])
+  const showFloatingHint = useCallback(() => {
+    PubSub.publish('SHOW-FLOATING-HINT', generateFieldDocumentationContent(tableName, fieldName, qualifiedName, fieldDescriptor))
+  }, [tableName, fieldName, qualifiedName, fieldDescriptor])
 
-  const onMouseOut = useCallback(() => {
+  const hideFloatingHint = useCallback(() => {
     PubSub.publish('HIDE-FLOATING-HINT')
   }, [])
 
@@ -101,11 +105,13 @@ export default React.memo(function TableField({ tableName, fieldName, fieldDescr
                     clickable={!fieldDescriptor.__DBVIEWER__isFinal}
                     onClick={fieldDescriptor.__DBVIEWER__isFinal ? undefined : () => setIsOpen(o => !o)}
                     isShown={show}
-                    onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+                    onMouseOver={showFloatingHint} onMouseOut={hideFloatingHint}>
       {show &&
         <>
           <DepthAdjust depth={depth} />
-          <FieldName>{fieldName}</FieldName> 
+          <FieldName required={fieldDescriptor.__DBVIEWER__required}>
+            {fieldName}{fieldDescriptor.__DBVIEWER__required && "*"}
+          </FieldName> 
           { fieldName ? ':' : '' }
           <FieldType
           >{fieldTypeText} {!isOpen && ( '... ' + fieldClosingTag)} {fieldDescriptor.__DBVIEWER__ref && <BlueSpan>→ {fieldDescriptor.__DBVIEWER__ref}</BlueSpan>}</FieldType>
@@ -158,58 +164,81 @@ export default React.memo(function TableField({ tableName, fieldName, fieldDescr
   )
 })
 
-function generateFieldDocumentationContent(fieldName: string, qualifiedName: string, fieldDescriptor: IFieldDescriptor) {
+function generateFieldDocumentationContent(tableName: string, fieldName: string, qualifiedName: string, fieldDescriptor: IFieldDescriptor) {
   return (
     <div>
       <i>
-        <b>{qualifiedName}
+        <b>{qualifiedName || tableName}
         {fieldDescriptor.__DBVIEWER__isFinal && 
           <span style={{color: 'gold'}}> : {fieldDescriptor.__DBVIEWER__type}</span>}
         </b>
       </i>
-      {fieldDescriptor.__DBVIEWER__docs && 
+      {fieldDescriptor.__DBVIEWER__docs ? 
         <>
-          <br />
-          <span>{fieldDescriptor.__DBVIEWER__docs}</span>
+          <p>{fieldDescriptor.__DBVIEWER__docs}</p>
         </>
-      }
-      {fieldName === '__v' && 
+      :
         <>
-          <br />
-          <span>Esse campo representa a versão do registro, sempre que o registro é modificado, o valor desse campo é automaticamente incrementado.</span>
-        </>
-      }
-      {fieldName === 'createdAt' && 
-        <>
-          <br />
-          <span>A data/hora em que esse registro foi criado.</span>
-        </>
-      }
-      {fieldName === 'updatedAt' && 
-        <>
-          <br />
-          <span>A data/hora da última vez que esse registro foi modificado.</span>
+          {fieldName === '_id' && 
+            <>
+              <p>Identificador único para esse registro no banco de dados.</p>
+            </>
+          }
+          {fieldName === 'tenantId' && 
+            <>
+              <p>Identifica de qual conta esse registro pertence, o <b>tenantId</b> serve para criar um banco de dados virtualmente separado dos outros, de forma que cada <b>tenantId</b> representa um "banco de dados virtual" diferente.</p>
+            </>
+          }
+          {fieldName === '__v' && 
+            <>
+              <br />
+              <p>Esse campo representa a versão do registro, sempre que o registro é modificado, o valor desse campo é automaticamente incrementado.</p>
+            </>
+          }
+          {fieldName === 'createdAt' && 
+            <>
+              <br />
+              <p>A data/hora em que esse registro foi criado.</p>
+            </>
+          }
+          {fieldName === 'updatedAt' && 
+            <>
+              <br />
+              <p>A data/hora da última vez que esse registro foi modificado.</p>
+            </>
+          }
         </>
       }
       <hr />
       {fieldDescriptor.__DBVIEWER__type === '?????' && 
         <>
-          <span>Campos do tipo '?????' podem ter qualquer formato, ele não foi predefinido.</span>
+          <p>Campos do tipo '?????' podem ter qualquer formato, ele não foi predefinido.</p>
         </>
       }
       {fieldDescriptor.__DBVIEWER__ref && 
         <>
-          <span>O valor desse campo aponta para um registro da tabela <b style={{color: '#4bd047'}}>{fieldDescriptor.__DBVIEWER__ref}</b>.</span>
+          <p>O valor desse campo aponta para um registro da tabela <b style={{color: '#4bd047'}}>{fieldDescriptor.__DBVIEWER__ref}</b>.</p>
+        </>
+      }
+      {fieldDescriptor.__DBVIEWER__required && 
+        <>
+          <p>Esse campo é <b style={{color: '#d07247'}}>obrigatório</b></p>
+        </>
+      }
+      {/* eslint-disable-next-line eqeqeq */}
+      {fieldDescriptor.__DBVIEWER__default != undefined && 
+        <>
+          <p>O valor padrão inicial para esse campo é: <b style={{color: '#47b2d0'}}>{JSON.stringify(fieldDescriptor.__DBVIEWER__default)}</b></p>
         </>
       }
       {!fieldDescriptor.__DBVIEWER__isFinal && 
         <>
-          <span>Esse campo tem filhos, clique para expandir/colapsar...</span>
+          <p>Clique para expandir/colapsar...</p>
         </>
       }
       {fieldDescriptor.__DBVIEWER__enum && 
         <>
-          <span>Esse campo tem os seguintes valores possíveis:</span>
+          <p>Esse campo tem os seguintes valores possíveis:</p>
           <ul>
             {fieldDescriptor.__DBVIEWER__enum.map(e => 
               <li key={e}>{e}</li>

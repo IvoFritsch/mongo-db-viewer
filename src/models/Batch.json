@@ -11,6 +11,7 @@
     },
     "clinic": {
       "__DBVIEWER__ref": "Clinic",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__docs": "ID da clínica que gerou esse lote",
       "__DBVIEWER__type": "ObjectID",
       "__DBVIEWER__isFinal": true
@@ -31,6 +32,7 @@
       "__DBVIEWER__isFinal": true
     },
     "status": {
+      "__DBVIEWER__required": true,
       "__DBVIEWER__enum": [
         -2,
         -1,
@@ -45,6 +47,7 @@
         8
       ],
       "__DBVIEWER__docs": "Status do lote",
+      "__DBVIEWER__default": 0,
       "__DBVIEWER__type": "Number",
       "__DBVIEWER__isFinal": true
     },
@@ -58,10 +61,12 @@
       "__DBVIEWER__isFinal": true
     },
     "isRefused": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
     "total": {
+      "__DBVIEWER__default": 0,
       "__DBVIEWER__type": "Number",
       "__DBVIEWER__isFinal": true
     },
@@ -115,7 +120,8 @@
             }
           }
         }
-      ]
+      ],
+      "__DBVIEWER__docs": "Um array que representa os recursos de glosa, cada item representa um recurso de glosa diferente enviado para o item"
     },
     "approvedTotal": {
       "__DBVIEWER__docs": "Total autorizado pelo operadora",
@@ -151,15 +157,18 @@
       ]
     },
     "insurance": {
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },
     "createdBy": {
       "__DBVIEWER__ref": "User",
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "ObjectID",
       "__DBVIEWER__isFinal": true
     },
     "generateReceivable": {
+      "__DBVIEWER__default": false,
       "__DBVIEWER__type": "Boolean",
       "__DBVIEWER__isFinal": true
     },
@@ -186,6 +195,7 @@
       "__DBVIEWER__isFinal": true
     },
     "tenantId": {
+      "__DBVIEWER__required": true,
       "__DBVIEWER__type": "String",
       "__DBVIEWER__isFinal": true
     },

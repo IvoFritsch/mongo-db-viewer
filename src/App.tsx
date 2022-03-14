@@ -34,34 +34,8 @@ function App() {
     <Draggable handle=".main-drag-div" scale={1} onDrag={(_, data) => setDragOffset({ x: data.x, y: data.y })}>
       <CoverAllDiv className="main-drag-div" x={dragOffset.x} y={dragOffset.y}>
         <Xwrapper>
-          {/* <DraggableTable name="AuthId" descriptor={AuthIdModel}/>
-          <DraggableTable name="Batch" descriptor={BatchModel}/>
-          <DraggableTable name="User" descriptor={useMemo(() => ({
-            __DBVIEWER__type: {
-              name: { __DBVIEWER__type: 'String', __DBVIEWER__isFinal: true },
-              _id: { __DBVIEWER__type: 'ObjectID', __DBVIEWER__isFinal: true },
-              updatedAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true },
-              createdAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true }
-            }
-          }), [])}/> 
-          <DraggableTable name="Clinic" descriptor={useMemo(() => ({
-            __DBVIEWER__type: {
-              name: { __DBVIEWER__type: 'String', __DBVIEWER__isFinal: true },
-              _id: { __DBVIEWER__type: 'ObjectID', __DBVIEWER__isFinal: true },
-              updatedAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true },
-              createdAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true }
-            }
-          }), [])}/> 
-          <DraggableTable name="Finance" descriptor={useMemo(() => ({
-            __DBVIEWER__type: {
-              name: { __DBVIEWER__type: 'String', __DBVIEWER__isFinal: true },
-              _id: { __DBVIEWER__type: 'ObjectID', __DBVIEWER__isFinal: true },
-              updatedAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true },
-              createdAt: { __DBVIEWER__type: 'Date', __DBVIEWER__isFinal: true }
-            }
-          }), [])}/>  */}
-          {/* <DraggableTable name="Finance" descriptor={FinanceModel}/>  */}
-          <DraggableTable name="Batch" descriptor={BatchModel}/> 
+          {/* <DraggableTable name="Batch" descriptor={BatchModel}/>  */}
+          <DraggableTable name="Attendance" descriptor={AttendanceModel}/> 
         </Xwrapper>
       </CoverAllDiv>
     </Draggable>

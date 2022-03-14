@@ -9,7 +9,7 @@ function DepthAdjust({ depth }: { depth: number }) {
   const divs = useMemo(() => {
     const ret = []
     for(let i = 0; i < depth; i++) {
-      ret.push(<AdjustDiv/>)
+      ret.push(<AdjustDiv key={i}/>)
     }
     return ret
   }, [depth])
