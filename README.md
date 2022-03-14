@@ -4,9 +4,9 @@ An utility that can parse mongoose models and generate a viewer for the collecti
 
 ## About
 
-The script 'generateModelsDescriptor.js' is capable of parsing mongoose schemas and convert them to jsons in the 'models' folder, that the React application is then capable of understand in order to mount the structure visualization of the collections and it's relations:
+The script [generateModelsDescriptor.js](generateModelsDescriptor.js) is capable of parsing mongoose schemas and convert them to JSONs in the [src/models](src/models) folder, that the React application is then capable of understand in order to mount the structure visualization of the collections and it's relations:
 
-
+![printscreen](printscreen.png)
 
 ### `yarn start`
 
@@ -15,6 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
 
 ### `yarn test`
 
